@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: bookreview
+spec:
+  rules:
+  - host: bookreview.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix      #Prefix matches all paths starting with the segment
+        backend:
+          service:
+            name: frontend-service
+            port: 
+              number: 80
+      - path: /api/
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port: 
+              number: 4000

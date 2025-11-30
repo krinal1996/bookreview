@@ -1,0 +1,14 @@
+[
+  {
+    "title": "The Pragmatic DevOps Handbook",
+    "author": "S. Dev",
+    "desc": "Practices to build and ship reliable systems.",
+    "reviews": []
+  },
+  {
+    "title": "Kubernetes in Action",
+    "author": "Marko",
+    "desc": "A practical guide to Kubernetes.",
+    "reviews": []
+  }
+]
