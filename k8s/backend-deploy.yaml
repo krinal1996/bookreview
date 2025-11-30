@@ -22,18 +22,8 @@ spec:
         - containerPort: 4000
         env: # <--- ADD THIS SECTION
         - name: MONGO_URI
-          value: mongodb://mongo-service:27017/bookreview?authSource=admin
-        - name: MONGO_INITDB_ROOT_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: MONGO_INITDB_ROOT_USERNAME
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mongo-secret
-              key: MONGO_INITDB_ROOT_PASSWORD
-
+          value: "mongodb://admin:password@mongo-service:27017/bookreview?authSource=admin"
+        
 ---
 apiVersion: v1
 kind: Service
