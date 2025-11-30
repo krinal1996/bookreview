@@ -20,6 +20,20 @@ spec:
         image: br_backend:1.0
         ports:
         - containerPort: 4000
+        env: # <--- ADD THIS SECTION
+        - name: MONGO_URI
+          value: mongodb://mongo-service:27017/bookreview?authSource=admin
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_INITDB_ROOT_USERNAME
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGO_INITDB_ROOT_PASSWORD
+
 ---
 apiVersion: v1
 kind: Service

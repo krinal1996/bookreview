@@ -20,13 +20,13 @@ spec:
         image: br_frontend:1.0
         ports:
         - containerPort: 80
-        volumeMounts:
-          - name: frontend-volume
-            mountPath: /usr/share/nginx/html
-      volumes:
-        - name: frontend-volume
-          persistentVolumeClaim:
-            claimName: frontend-pvc
+#        volumeMounts:
+#          - name: frontend-volume
+#            mountPath: /usr/share/nginx/html
+#      volumes:
+#        - name: frontend-volume
+#          persistentVolumeClaim:
+#            claimName: frontend-pvc
 ---
 apiVersion: v1
 kind: Service
