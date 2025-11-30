@@ -40,8 +40,9 @@ function withMetrics(route, handler){
 
 const PORT = process.env.PORT || 4000;
 //const MONGO_URI = process.env.MONGO_URI || 'mongodb://mongo-service:27017';
-const MONGO_URI = process.env.MONGO_URI || `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME || ''}:${process.env.MONGO_INITDB_ROOT_PASSWORD || ''}@mongo-service:27017/${MONGO_DB}?authSource=admin`;
 const MONGO_DB = process.env.MONGO_DB || 'bookreview';
+const MONGO_URI = process.env.MONGO_URI || `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME || ''}:${process.env.MONGO_INITDB_ROOT_PASSWORD || ''}@mongo-service:27017/${MONGO_DB}?authSource=admin`;
+//const MONGO_DB = process.env.MONGO_DB || 'bookreview';
 const REDIS_URL = process.env.REDIS_URL || 'redis://redis:6379';
 
 let db, books;
